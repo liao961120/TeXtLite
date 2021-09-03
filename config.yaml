@@ -32,3 +32,19 @@ params:
     twitter: "/themes/TeXtLite/static/social/twitter.svg"
     github: "/themes/TeXtLite/static/social/github.svg"
     facebook: "/themes/TeXtLite/static/social/facebook.svg"
+
+
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: monokai
+    tabWidth: 4

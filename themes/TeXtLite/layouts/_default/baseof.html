@@ -7,5 +7,17 @@
         {{- block "main" . }}{{- end }}
         
         {{- partial "footer.html" . -}}
+
+        <script>
+            document.querySelectorAll('code').forEach(elem => {
+                console.log(elem)
+                if (elem.className.startsWith('language')) 
+                    elem.className += " line-numbers";
+            })
+        </script>
+        <link href="{{ "/js/prism.css" | relURL }}" rel="stylesheet" />
+        <script src="{{ "/js/prism.js" | relURL }}"></script>
+        <script src="{{ "/js/prism-line-numbers.min.js" | relURL }}"></script>
+        <link rel="stylesheet" href="{{ "/js/prism-line-numbers.min.css" | relURL }}">
     </body>
 </html>

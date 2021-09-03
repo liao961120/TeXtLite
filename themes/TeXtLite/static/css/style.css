@@ -6,53 +6,47 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgb(218, 218, 255);
 }
 
 /* Main */
 .main {
-    /* height: 300px; */
+    display: flex;
+    width: 80%;
+    margin: 0.8em auto;
+    padding: 0 auto;
 }
-
-/* Footer */
-footer {
-    margin-top: auto;
-    text-align: center;
-    background-color: #af785f;
-    padding-top: 1.8em;
-    font-size: 0.8em;
-    color: white;
-}
-footer a {
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-}
-footer a:hover {
-    text-decoration: underline;
-}
-footer .social > svg {
-    display: inline-block;
-    height: 1.2rem;
-    width: 1.2rem;
-}
-footer .social span.icon {
-    margin: 0 0.2em;
-    padding: 0;
-}
-footer .social span a {
-    text-decoration: none;
-    color: black;
-    padding: 0;
+.main article.post {
+    width: 80%;
     margin: 0;
+    padding: 0;
+}
+.main aside {
+    width: 20%;
+    margin: 0;
+    padding: 0;
+}
+.article_header h1 {
+    font-size: 2em;
+}
+.article_content h2 {
+    display: block;
+    border-bottom: 1px solid rgb(185, 185, 185);
+}
+.article_content p {
+    text-align: justify;
+}
+blockquote p{
+    font-style: italic;
+    border-left: 2px solid rgb(175, 175, 175);
+    padding: 5px .5em;
 }
 
 
 /* Header Nav bar */
 .header {
-    width: 85%;
+    width: 80%;
     margin: 0;
-    padding: 15px 7.5%;
+    padding: 15px 10%;
     background-color: rgb(255, 212, 212);
     display: flex;
     justify-content: space-between;
@@ -64,7 +58,6 @@ footer .social span a {
 .header > .site_nav {
     padding: 0;
     margin: 0;
-    min-width: 100px;
 }
 .header > .site_nav > span
 {   
@@ -84,3 +77,88 @@ footer .social span a {
     margin: 0;
     padding: 0;
 }
+
+
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: #af785f;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    font-size: 0.8em;
+    color: white;
+}
+footer a {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+footer a:hover {
+    text-decoration: underline;
+    padding: 0;
+    margin: 0;
+}
+footer span.social {
+    display: inline-block;
+    background-color: #0072c5;
+    border-radius: 50%;
+    padding: 0.4rem;
+    height: 1.1rem;
+    width: 1.1rem;
+}
+footer span.social.twitter {
+    background-color: #1da1f2;
+}
+footer span.social.github {
+    background-color: black;
+}
+footer .social > svg {
+    display: inline-block;
+    height: 1.1rem;
+    width: 1.1rem;
+    padding: 0;
+    margin: 0;
+}
+footer .social span.icon {
+    margin: 0 0.2em;
+    padding: 0;
+}
+footer .social span a {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+footer .theme_info {
+    font-size: 0.85em;
+}
+
+
+/* Responsive design */
+@media only screen and (max-width: 700px) {
+    .header {
+        width: 90%;
+        padding: 15px 5%;
+    }
+    .header > .header_title {
+        min-width: 100px;
+    }
+    .header > .site_nav {
+        min-width: 100px;
+    }
+    .main {
+        display: flex;
+        width: 90%;
+    }
+
+    .main article.post {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .main aside {
+        display: none;
+    }
+  }

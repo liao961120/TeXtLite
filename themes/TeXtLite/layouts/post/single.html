@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+<div class="main">
+    <article class="post">
+        <div class="article_header">
+            <h1>{{ .Title }}</h1>
+
+            <!-- Taxonomies: https://gohugo.io/templates/taxonomy-templates/#example-list-tags-in-a-single-page-template -->
+            {{ range .Params.tags }}
+                {{ . }}
+            {{end}}
+            <ul>
+                {{ range .Site.Taxonomies.tags.pandoc }}
+                    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+                {{ end }}
+            </ul>
+            <!-- Taxonomies -->
+
+        </div>
+
+        <div class="article_content">
+            {{ .Content }}
+        </div>
+    </article>
+    <aside class="toc toc-right js-toc relative z-1 transition--300 absolute pa4 pt5 is-position-fixed"></aside>
+    <!-- <aside>{{ .TableOfContents }}</aside> -->
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+<script>
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.js-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.article_content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h2, h3, h4',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true,
+        collapseDepth: 3,
+    });
+</script>
+<style>
+    ol.toc-list {
+        list-style-type: none;
+    }
+    aside {
+        position: fixed;
+        top: 15% !important;
+        right: 2%;
+    }
+</style>
+{{ end }}

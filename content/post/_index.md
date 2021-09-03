@@ -1,5 +1,5 @@
 +++
-title = "About"
+title = "Posts"
 +++
 
 This is some content
