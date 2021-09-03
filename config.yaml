@@ -5,3 +5,30 @@ theme: "TeXtLite"
 
 permalinks:
   post: /:year/:month/:day/:filename/
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 1
+    - name: "Posts"
+      url: "/post/"
+      weight: 2
+    - name: "About"
+      url: "/about/"
+      weight: 4
+    - name: "Subscribe"
+      url: "/index.xml"
+
+params:
+  social: 
+    email: "liao961120@gmail.com"
+    github: "https://github.com/liao961120"
+    facebook: "https://www.facebook.com/liao961120"
+    twitter: "https://twitter.com/liao_yongfu"
+  icon:
+    logo: "/themes/TeXtLite/static/logo.svg"
+    email: "/themes/TeXtLite/static/social/email.svg"
+    twitter: "/themes/TeXtLite/static/social/twitter.svg"
+    github: "/themes/TeXtLite/static/social/github.svg"
+    facebook: "/themes/TeXtLite/static/social/facebook.svg"

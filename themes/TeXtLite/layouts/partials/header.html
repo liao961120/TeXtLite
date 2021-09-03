@@ -1,13 +1,12 @@
 <div class="header">
     <div class="header_title">
-        <span>ICON</span>
+        <span class="logo">{{ readFile $.Site.Params.icon.logo | safeHTML }}</span>
         <span>{{ .Site.Title }}</span>
     </div>
 
-    <ul class="site_nav">
-        <li class="nav_link"><a href="">Blog</a></li>
-        <li class="nav_link"><a href="">Tags</a></li>
-        <li class="nav_link"><a href="">Work</a></li>
-        <li class="nav_link"><a href="">About</a></li>
-    </ul>
+    <div class="site_nav">
+        {{ range .Site.Menus.main }}
+        <span class="nav_link"><a href="{{ .URL }}">{{ .Name }}</a></span>
+        {{ end }}
+    </div>
 </div>

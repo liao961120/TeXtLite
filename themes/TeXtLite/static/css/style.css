@@ -1,0 +1,86 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 18.5px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(218, 218, 255);
+}
+
+/* Main */
+.main {
+    /* height: 300px; */
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    background-color: #af785f;
+    padding-top: 1.8em;
+    font-size: 0.8em;
+    color: white;
+}
+footer a {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer .social > svg {
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem;
+}
+footer .social span.icon {
+    margin: 0 0.2em;
+    padding: 0;
+}
+footer .social span a {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Header Nav bar */
+.header {
+    width: 85%;
+    margin: 0;
+    padding: 15px 7.5%;
+    background-color: rgb(255, 212, 212);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.header > .header_title {
+    min-width: 100px;
+}
+.header > .site_nav {
+    padding: 0;
+    margin: 0;
+    min-width: 100px;
+}
+.header > .site_nav > span
+{   
+    position: relative;
+    display: inline-block;
+    margin: 0 0.12em;
+    padding: 0;
+    top: 25%;
+}
+.header_title span {
+    vertical-align: middle;
+}
+.header_title .logo>svg{
+    display: inline-block;
+    height: 1.92rem;
+    width: 1.92rem;
+    margin: 0;
+    padding: 0;
+}
