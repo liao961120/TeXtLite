@@ -1,6 +1,8 @@
 ---
 title: This is a post
 date: 2021-02-05
+aliases:
+    - /2021/02/05/this-is-a-post.html
 ---
 
 ## Hello world
