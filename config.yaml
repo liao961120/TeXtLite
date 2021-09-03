@@ -1,0 +1,7 @@
+baseURL: "http://example.org/"
+languageCode: "en-us"
+title: "Yongfu's Blog"
+theme: "TeXtLite"
+
+permalinks:
+  post: /:year/:month/:day/:filename/
