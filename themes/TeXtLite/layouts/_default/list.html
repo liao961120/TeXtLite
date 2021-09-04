@@ -2,62 +2,58 @@
 
 <div class="main">
     <article>
-        <div class="article_header"><h1>Tags</h1></div>
-        <ul class="tags">
-            <li><button>Show All <span class="count">39</span></button></li>
-            <li><button>R <span class="count">25</span></button></li>
-            <li><button>R Markdown <span class="count">9</span></button></li>
-            <li><button>Vue <span class="count">3</span></button></li>
-        </ul>
+        <div class="article_header">
+            <h1>Tags</h1>
+        {{ $allTags := newScratch }}
+        {{ $allTags.Set "tags" slice }}
+        {{ range .Pages }}
+            {{ if .Params.tags }}
+                {{ $allTags.Set "tags" ( ($allTags.Get "tags") | append .Params.tags )}}
+            {{ end }}
+        {{ end }}
+            <div class="tags">
+                <a href="/post/">All</a>
+            {{  range ($allTags.Get "tags" | uniq) }}
+                <a href="/tags/{{ . }}">{{ . }}</a>
+            {{ end }}
+            </div>
+        </div>
+        
         <!-- <div id="data" data-pages="{{ jsonify .Pages }}">DATA here</div> -->
 
         {{ $curr := newScratch }}
         {{ $curr.Set "year" "2999" }}
         <div class="article_list">
             {{ range $index, $element := .Pages }}
-                {{ if not (eq ($curr.Get "year") (dateFormat "2006" $element.Params.date)) }}
-                    {{ if gt $index 0 }}</ul></section>{{end}}<section>
-                    <h2>{{ dateFormat "2006" .Params.date }}</h2><ul>
-                    {{ $curr.Set "year" ($element.Params.date.Format "2006") }}
-                {{end}}
-                    <li data-date='{{$element.Params.date.Format "2006-01-02"}}'>
-                        <span class="published">{{ dateFormat "Jan 06" $element.Params.date }}</span>
-                        <a href="{{.RelPermalink}}" title="{{.Content | truncate 35}}">{{ .Title }}</a>
-                    </li>
+                {{ if $element.Params.date }}    
+                    {{ if not (eq ($curr.Get "year") (dateFormat "2006" $element.Params.date)) }}
+                        {{ if gt $index 0 }}</ul></section>{{end}}<section>
+                        <h2>{{ dateFormat "2006" .Params.date }}</h2><ul>
+                        {{ $curr.Set "year" ($element.Params.date.Format "2006") }}
+                    {{end}}
+                        <li data-date='{{$element.Params.date.Format "2006-01-02"}}'>
+                            <span class="published">{{ dateFormat "Jan 2" $element.Params.date }}</span>
+                            <a href="{{.RelPermalink}}" title="{{.Content | truncate 35}}">{{ .Title }}</a>
+                        </li>
+                {{ end }}
             {{end}}
             </ul></section>
-            <!-- <section>
-                <h2>2021</h2>
-                <ul>
-                    <li>
-                        <span class="published">Jul 18</span>
-                        <a href="#" title="分享一下前陣子看過給出答案，它依然讓我感到困惑。我覺得會需要...">文章分享：〈核心價值 (value) ：迷失方向時的指南針〉</a>
-                    </li>
-                    <li>
-                        <span class="published">Jun 06</span>
-                        <a href="#" title="A Timer for Interval Training...">A Timer for Interval Training</a>
-                    </li>
-                    <li>
-                        <span class="published">Jun 03</span>
-                        <a href="#" title="我的 R 開放課程...">我的 R 開放課程</a>
-                    </li>
-                </ul>
-            </section>
-            <section>
-                <h2>2020</h2>
-                <ul>
-                    <li>
-                        <span class="published">Jun 03</span>
-                        <a href="#" title="我的 R 開放課程...">我的 R 開放課程</a>
-                    </li>
-                    <li>
-                        <span class="published">Jun 03</span>
-                        <a href="#" title="我的 R 開放課程...">A Timer for Interval Training</a>
-                    </li>
-                </ul>
-            </section> -->
         </div>
     </article>
 </div>
 
+<script>
+    var loc = location.href.split('/');
+    loc.pop();
+    loc = loc.slice(-2);
+    if (loc[0] == 'tags') {
+        document.querySelectorAll('.tags > a').forEach(e => {
+            if (e.innerText == loc[1]) {
+                e.className += " highlight";
+            }
+        })
+    } else {
+        document.querySelector('.tags > a').className += " highlight";
+    }
+</script>
 {{ end }}

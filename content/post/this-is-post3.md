@@ -1,6 +1,7 @@
 ---
 title: This is post 3
 date: 2020-05-01
+tags: ["pandoc"]
 ---
 
 ## Hello world

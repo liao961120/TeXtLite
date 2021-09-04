@@ -6,15 +6,26 @@
             <h1>{{ .Title }}</h1>
 
             <!-- Taxonomies: https://gohugo.io/templates/taxonomy-templates/#example-list-tags-in-a-single-page-template -->
-            {{ range .Params.tags }}
-                {{ . }}
-            {{end}}
-            <ul>
-                {{ range .Site.Taxonomies.tags.pandoc }}
-                    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+            <div class="meta">
+                {{ if .Params.tags }}
+                <div class="tags">
+                    {{ range .Params.tags }}
+                        <a href="/tags/{{ . }}">{{ . }}</a>
+                    {{ end }}
+                </div>
                 {{ end }}
-            </ul>
-            <!-- Taxonomies -->
+                
+                <!-- <ul>
+                    {{ range .Site.Taxonomies.tags.pandoc }}
+                        <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+                    {{ end }}
+                </ul> -->
+                <!-- Taxonomies -->
+                <div class="date">
+                    <span class="inline-icon">{{ readFile "/themes/TeXtLite/static/gadget/calendar.svg" | safeHTML }}</span>
+                    <span class="str">{{ .Date.Format "Jan 2, 2006" }}</span>
+                </div>
+            </div>
 
         </div>
 
