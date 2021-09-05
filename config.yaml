@@ -32,6 +32,8 @@ params:
     twitter: "/themes/TeXtLite/static/social/twitter.svg"
     github: "/themes/TeXtLite/static/social/github.svg"
     facebook: "/themes/TeXtLite/static/social/facebook.svg"
+  comments:
+    disqus: "y-f-liao-s-page"
 
 
 

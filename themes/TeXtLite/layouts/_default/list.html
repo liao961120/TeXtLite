@@ -28,7 +28,7 @@
                         {{end}}
                             <li data-date='{{$element.Params.date.Format "2006-01-02"}}'>
                                 <span class="published">{{ dateFormat "Jan 2" $element.Params.date }}</span>
-                                <a href="{{.RelPermalink}}" title="{{.Content | truncate 35}}">{{ .Title }}</a>
+                                <a href="{{.RelPermalink}}" title="{{.Content | truncate 50}}">{{ .Title }}</a>
                             </li>
                     {{ end }}
                 {{end}}
@@ -103,4 +103,9 @@
 
     listArticles();
 </script>
+<style>
+    .tags > a:hover {
+        cursor: pointer;
+    }
+</style>
 {{ end }}
