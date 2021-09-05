@@ -2,6 +2,7 @@ baseURL: "https://textlite.netlify.app/"
 languageCode: "en-us"
 title: "Yongfu's Blog"
 theme: "TeXtLite"
+disqusShortname: y-f-liao-s-page
 
 permalinks:
   post: /:year/:month/:day/:filename/
@@ -41,7 +42,7 @@ params:
   comments:
     disqus: "y-f-liao-s-page"
 
-disqusShortname: y-f-liao-s-page
+
 
 
 markup:

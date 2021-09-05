@@ -199,7 +199,7 @@ footer a:hover {
     padding: 0;
     margin: 0;
 }
-footer span.social {
+div.social span.social {
     display: inline-block;
     background-color: #0072c5;
     border-radius: 50%;
@@ -207,24 +207,24 @@ footer span.social {
     height: 1.1rem;
     width: 1.1rem;
 }
-footer span.social.twitter {
+div.social span.social.twitter {
     background-color: #1da1f2;
 }
-footer span.social.github {
+div.social span.social.github {
     background-color: black;
 }
-footer .social > svg {
+div.social .social > svg {
     display: inline-block;
     height: 1.1rem;
     width: 1.1rem;
     padding: 0;
     margin: 0;
 }
-footer .social span.icon {
+div.social span.icon {
     margin: 0 0.2em;
     padding: 0;
 }
-footer .social span a {
+div.social span a {
     text-decoration: none;
     color: black;
     padding: 0;
