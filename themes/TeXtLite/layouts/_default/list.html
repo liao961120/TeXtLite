@@ -4,26 +4,43 @@
     <article>
         <div class="article_header">
             <h1>Tags</h1>
-        {{ $allTags := newScratch }}
-        {{ $allTags.Set "tags" slice }}
-        {{ range .Pages }}
-            {{ if .Params.tags }}
-                {{ $allTags.Set "tags" ( ($allTags.Get "tags") | append .Params.tags )}}
-            {{ end }}
-        {{ end }}
+
             <div class="tags">
-                <a href="/post/">All</a>
-            {{  range ($allTags.Get "tags" | uniq) }}
-                <a href="/tags/{{ . }}">{{ . }}</a>
-            {{ end }}
+                <a onclick="switchTag('all')" data-tag="all">All<sup style="font-weight:normal"> {{ len .Pages }}</sup></a>
+                {{ range $tag, $pages := .Site.Taxonomies.tags }}
+                    <a onclick="switchTag('{{$tag}}')" data-tag="{{ $tag }}">{{ $tag }}<sup style="font-weight:normal"> {{ len $pages }}</sup></a>
+                {{ end }}
             </div>
         </div>
         
         <!-- <div id="data" data-pages="{{ jsonify .Pages }}">DATA here</div> -->
 
+        {{ range $tag, $pages := .Site.Taxonomies.tags }}
+            {{ $curr := newScratch }}
+            {{ $curr.Set "year" "2999" }}
+            <div class="article_list" data-tag="{{ $tag }}">
+                {{ range $index, $element := $pages }}
+                    {{ if $element.Params.date }}    
+                        {{ if not (eq ($curr.Get "year") (dateFormat "2006" $element.Params.date)) }}
+                            {{ if gt $index 0 }}</ul></section>{{end}}<section>
+                            <h2>{{ dateFormat "2006" .Params.date }}</h2><ul>
+                            {{ $curr.Set "year" ($element.Params.date.Format "2006") }}
+                        {{end}}
+                            <li data-date='{{$element.Params.date.Format "2006-01-02"}}'>
+                                <span class="published">{{ dateFormat "Jan 2" $element.Params.date }}</span>
+                                <a href="{{.RelPermalink}}" title="{{.Content | truncate 35}}">{{ .Title }}</a>
+                            </li>
+                    {{ end }}
+                {{end}}
+                </ul>
+                </section>
+            </div>
+        {{ end }}
+
+        <!-- All Posts -->
         {{ $curr := newScratch }}
         {{ $curr.Set "year" "2999" }}
-        <div class="article_list">
+        <div class="article_list" data-tag="all">
             {{ range $index, $element := .Pages }}
                 {{ if $element.Params.date }}    
                     {{ if not (eq ($curr.Get "year") (dateFormat "2006" $element.Params.date)) }}
@@ -37,23 +54,53 @@
                         </li>
                 {{ end }}
             {{end}}
-            </ul></section>
+            </ul>
+            </section>
         </div>
+
     </article>
 </div>
 
 <script>
-    var loc = location.href.split('/');
-    loc.pop();
-    loc = loc.slice(-2);
-    if (loc[0] == 'tags') {
+    function cleanUp() {
         document.querySelectorAll('.tags > a').forEach(e => {
-            if (e.innerText == loc[1]) {
-                e.className += " highlight";
-            }
+            e.className = "";
         })
-    } else {
-        document.querySelector('.tags > a').className += " highlight";
+        document.querySelectorAll("div.article_list").forEach(e => {
+            e.style.display = "none";
+        })
     }
+    function listArticles() {
+        cleanUp();
+        var url = new URL(location.href);
+        var tag = url.searchParams.get('tag');
+
+        // No Query string
+        if (tag == null) {
+            // Highlight tag button
+            document.querySelector('.tags > a').className += " highlight";
+            // Show article list
+            document.querySelectorAll("div.article_list").forEach(e => {
+                var t = e.getAttribute('data-tag');
+                if (t == 'all') e.style.display = "block";
+            })
+        } else {
+            // Highlight tag button
+            document.querySelectorAll('.tags > a').forEach(e => {
+                if (e.getAttribute('data-tag') == tag) e.className += " highlight";
+            })
+            // Show article list
+            document.querySelectorAll("div.article_list").forEach(e => {
+                var t = e.getAttribute('data-tag');
+                if (t == tag) e.style.display = "block";
+            })
+        }
+    }
+    function switchTag(tag) {
+        window.history.pushState("", "", `/post/?tag=${tag}`);
+        listArticles();
+    }
+
+    listArticles();
 </script>
 {{ end }}

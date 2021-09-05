@@ -1,5 +1,5 @@
-+++
-title = "Posts"
-+++
-
-This is some content
+---
+title: "Posts"
+aliases:
+    - /archive.html
+---
