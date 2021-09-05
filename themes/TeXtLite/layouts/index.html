@@ -14,6 +14,7 @@
                         <p class="name">{{ $.Site.Params.landing.name }}</p>
                         <p class="position">{{ $.Site.Params.landing.position }}</p>
                         <p class="institute">{{ $.Site.Params.landing.institute }}</p>
+                        {{- partial "social.html" . -}}
                     </div>
                     <div class="right bio">
                         <h2>Biography</h2>
@@ -94,11 +95,12 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 0 5%;
+            padding: 0 7.5%;
         }
         section .container .row .left {
             width: 30%;
             margin-right: 1em;
+            margin-bottom: 1.5em;
         }
         section .container .row .right {
             width: 60%;
@@ -112,7 +114,7 @@
             overflow: hidden;
             border-radius: 50%;
             display: block;
-            margin: 15px auto 0 auto;
+            margin: 12px auto 0 auto;
             padding: 0 auto;
         }
         section.bio .imgCircle img.avatar {
@@ -123,6 +125,20 @@
         }
         section.bio .personal-info {
             text-align: center;
+        }
+        section.bio .personal-info p {
+            margin: 0.35em 0;
+        }
+        section.bio .personal-info .name {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        section.bio .personal-info .position,
+        section.bio .personal-info .institute {
+            color:rgb(105, 105, 105);
+        }
+        section.bio .personal-info .institute {
+            margin-bottom: 0.8em;
         }
         div.right.bio > h2 {
             margin-top: 0;
@@ -161,7 +177,10 @@
 
 
         @media only screen and (max-width: 800px) {
-        section .container .row .left {
+        section .container .row {
+            padding: 0 3.5%;    
+        }
+            section .container .row .left {
             width: 100%;
             min-width: 300px;
         }
@@ -169,6 +188,7 @@
             width: 100%;
             min-width: 300px;
         }
+        
         }
 
     </style>
