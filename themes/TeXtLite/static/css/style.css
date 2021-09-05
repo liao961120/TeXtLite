@@ -233,7 +233,9 @@ footer .social span a {
 footer .theme_info {
     font-size: 0.85em;
 }
-
+footer .copyright {
+    letter-spacing: .5px;
+}
 
 /* Responsive design */
 @media only screen and (max-width: 700px) {

@@ -21,6 +21,7 @@ menu:
       url: "/index.xml"
 
 params:
+  description: "About Learning"
   landing:
     avatar: https://yongfu.name/img/me.jpg
     name: "Yongfu Liao"
@@ -40,6 +41,7 @@ params:
   comments:
     disqus: "y-f-liao-s-page"
 
+disqusShortname: y-f-liao-s-page
 
 
 markup:
