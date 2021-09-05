@@ -21,6 +21,11 @@ menu:
       url: "/index.xml"
 
 params:
+  landing:
+    avatar: https://yongfu.name/img/me.jpg
+    name: "Yongfu Liao"
+    position: "M.A. Student"
+    institute: "National Taiwan University"
   social: 
     email: "liao961120@gmail.com"
     github: "https://github.com/liao961120"
