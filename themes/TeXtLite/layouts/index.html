@@ -57,6 +57,7 @@
                         <h2>{{ $.Site.Params.landing.projects.title }}</h2>
                     </div>
                     <div class="right">
+                        <div id="proj-tags"><span data-tag="" class="clicked">All</span></div>
                     {{ range $.Site.Params.landing.projects.items }}
                         <div class="project" data-tags='{{ delimit .tags "," }}'>
                             <img src="{{ .img }}" alt="{{ .name }}">
@@ -71,20 +72,22 @@
             </div>
         </section>
 
+        {{ range $.Site.Params.landing.sections }}
         <section>
             <div class="container">
                 <div class="row">
                     <div class="left">
-                        <h2>Two Columns</h2>
+                        <h2>{{ .title }}</h2>
                     </div>
                     <div class="right">
-                        Some contents
+                        {{ .about | markdownify }}
                     </div>
                 </div>
             </div>
         </section>
+        {{ end }}
 
-        <section class="featured">
+        <!-- <section class="featured">
             <div class="container">
                 <h2>Featured</h2>
                 <div class="row">
@@ -93,11 +96,48 @@
                     <span class="icon">ICON</span>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         
         {{- partial "footer.html" . -}}
     </body>
+
+    <script>
+        var tags = [];
+        var select = document.getElementById('proj-tags');
+
+        document.querySelectorAll(".project").forEach(e => {
+            tags = tags.concat(e.getAttribute('data-tags').split(','));
+        })
+        function showTag() {
+            document.querySelectorAll('#proj-tags>span').forEach(e => e.className = "");
+            this.className = 'clicked';
+            var t = this.getAttribute('data-tag');
+            if (t == '') {
+                document.querySelectorAll('.project').forEach(e => {
+                    e.style.display = "flex";
+                });
+                return
+            }
+            document.querySelectorAll('.project').forEach(e => {
+                let dataTags = e.getAttribute('data-tags').split(',')
+                if (dataTags.includes(t)) 
+                    e.style.display = "flex";
+                else
+                    e.style.display = "none";
+            })
+        }
+        // Attach showTag() to button
+        select.children[0].onclick = showTag;
+        tags.forEach(t => {
+            var span = document.createElement("span");
+            span.innerText = t;
+            span.setAttribute('data-tag', t);
+            span.onclick = showTag;
+            select.appendChild(span)
+            console.log(span)
+        })
+    </script>
 
     <style>
         section {
@@ -105,6 +145,13 @@
         }
         section:nth-child(2n+1) {
             background-color: var(--landing-section-skin);
+        }
+        section p {
+            font-size: 1.3rem;
+            line-height: 1.35;
+        }
+        section li {
+            line-height: 1.7;
         }
         section h2 {
             font-size: 2.3em;
@@ -134,10 +181,28 @@
         }
 
         /* Project */
+        #proj-tags {
+            margin-bottom: 1em;
+        }
+        #proj-tags > span {
+            color: white;
+            background-color: var(--header-background);
+            padding: 0.1em 0.3em;
+            border-radius: 0.2em;
+            margin-right: 0.25em;
+        }
+        #proj-tags > span:hover {
+            cursor: pointer;
+            color: var(--link-transitiion-light);
+        }
+        #proj-tags > span.clicked {
+            background-color: var(--header-background-darker); 
+        }
         div.project {
             margin-bottom: 2em;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
         div.project h3,
         div.project p.project-about {
@@ -145,14 +210,14 @@
         }
         div.project p.project-about {
             margin-top: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--grey-text-darker);
             font-family: FreeSerif, 'Times New Roman', Times, serif;
         }
         div.project h3 > a {
             font-size: 1.9rem;
             color: black;
-            font-weight: bold;
+            font-weight: 600;
         }
         div.project h3 > a:hover {
             text-decoration: none;
@@ -205,7 +270,7 @@
             padding-top: 0;
         }
         div.bio > p {
-            text-align:justify;
+            text-align: justify;
         }
         span.icon > svg {
             height: 1.2em;

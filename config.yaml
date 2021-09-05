@@ -71,8 +71,25 @@ params:
           about: "A timer that supports drag-and-droping to create custom interval workouts. Written in vanilla JavaScript, HTML & CSS."
           url: https://github.com/liao961120/draggableTimer
           img: /project/draggableTimer.png 
+    sections:
+      - title: "Teaching"
+        about: |
+          - [Introduction to Programming for Data Science][lnk1], Spring 2021
+            - Teaching Assistant & [Lab Session][lnk2] Instructor ([Course Archive][lnk5]) 
+          - [Introduction to Data Science with R][lnk3], Fall 2019
+            - Teaching Assistant & [Lab Session][lnk4] Instructor
+          
+          [lnk1]: https://lopentu.github.io/rlads2021
+          [lnk2]: https://lopentu.github.io/rlads2021/lab
+          [lnk3]: https://rlads2019.github.io/
+          [lnk4]: https://rlads2019.github.io/lab
+          [lnk5]: https://rlads2021.github.io/archives/
 
+      - title: "自訂章節"
+        about: |
+          ## Write Markdown Here
 
+          在這兒寫下**內容**。
 
 
 markup:
