@@ -17,29 +17,30 @@
                         {{- partial "social.html" . -}}
                     </div>
                     <div class="right bio">
-                        <h2>Biography</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis repellendus consequuntur expedita laudantium ab, exercitationem animi inventore deserunt necessitatibus, itaque adipisci laborum vitae. Sed in similique quia odio eos doloremque?</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis repellendus consequuntur expedita laudantium ab, exercitationem animi inventore deserunt necessitatibus, itaque adipisci laborum vitae. Sed in similique quia odio eos doloremque?</p>
+                        {{ $.Site.Params.landing.biography.about | markdownify }}
                         <div class="row left-align">
                             <div class="left">
-                                <h3>Interests</h3>
+                                <h3>{{ $.Site.Params.landing.biography.interests.title }}</h3>
                                 <ul>
-                                    <li>Programming</li>
-                                    <li>Human Evolution</li>
+                                {{ range $.Site.Params.landing.biography.interests.items }}
+                                    <li>{{ . }}</li>
+                                {{ end }}
                                 </ul>
                             </div>
                             <div class="right">
-                                <h3>Education</h3>
+                                <h3>{{ $.Site.Params.landing.biography.education.title }}</h3>
                                 <ul class="edu-list">
+                                    {{ range $.Site.Params.landing.biography.education.items }}
                                     <li>
                                         <span class="icon">
                                             {{ readFile "/themes/TeXtLite/static/gadget/graduation-cap.svg" | safeHTML }}
                                         </span>
                                         <div class="description">
-                                            <p class="course">B.S. in Psychology, 2019</p>
-                                            <p class="institute">National Taiwan University</p>
+                                            <p class="course">{{ .course }}</p>
+                                            <p class="institute">{{ .institution }}</p>
                                         </div>
                                     </li>
+                                    {{ end }}
                                 </ul>
                             </div>
                         </div>
@@ -48,6 +49,27 @@
             </div>
         </section>
 
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="left">
+                        <h2>{{ $.Site.Params.landing.projects.title }}</h2>
+                    </div>
+                    <div class="right">
+                    {{ range $.Site.Params.landing.projects.items }}
+                        <div class="project" data-tags='{{ delimit .tags "," }}'>
+                            <img src="{{ .img }}" alt="{{ .name }}">
+                            <div>
+                                <h3><a href="{{ .url }}" target="_blank">{{ .name }}</a></h3>
+                                <p class="project-about">{{ .about }}</p>
+                            </div>
+                        </div>
+                    {{ end }}
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section>
             <div class="container">
@@ -77,16 +99,17 @@
         {{- partial "footer.html" . -}}
     </body>
 
-
     <style>
         section {
-            padding: 2em 0;
+            padding: 4rem 0;
         }
         section:nth-child(2n+1) {
-            background-color: #f0ccb4;
+            background-color: var(--landing-section-skin);
         }
         section h2 {
             font-size: 2.3em;
+            font-weight: 600;
+            margin-top: 0;
         }
         section.featured h2 {
             text-align: center;
@@ -108,6 +131,39 @@
         }
         section .container .row .right {
             width: 60%;
+        }
+
+        /* Project */
+        div.project {
+            margin-bottom: 2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        div.project h3,
+        div.project p.project-about {
+            margin: 0;
+        }
+        div.project p.project-about {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--grey-text-darker);
+            font-family: FreeSerif, 'Times New Roman', Times, serif;
+        }
+        div.project h3 > a {
+            font-size: 1.9rem;
+            color: black;
+            font-weight: bold;
+        }
+        div.project h3 > a:hover {
+            text-decoration: none;
+        }
+        div.project > * {
+            /* display: inline-block; */
+            width: 48%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
         }
 
         /* Biography */
@@ -134,12 +190,12 @@
             margin: 0.35em 0;
         }
         section.bio .personal-info .name {
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.5em;
         }
         section.bio .personal-info .position,
         section.bio .personal-info .institute {
-            color:rgb(105, 105, 105);
+            color: var(--grey-text);
         }
         section.bio .personal-info .institute {
             margin-bottom: 0.8em;
@@ -170,10 +226,10 @@
             margin-bottom: 0.15em;
         }
         ul.edu-list p.course {
-            font-weight: bold;
+            font-weight: 600;
         }
         ul.edu-list p.institute {
-            color: rgb(105, 105, 105);
+            color: var(--grey-text);
             font-size: 0.88em;
         }
 

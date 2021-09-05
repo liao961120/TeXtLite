@@ -1,10 +1,13 @@
 :root {
     --skin: #F0D9CA;
+    --landing-section-skin: #eccdb9;
     --header-text: rgba(255, 255, 255, 0.904);
     --header-background: #af785f;
     --link-transitiion-light: #df926e;
     --link-transitiion-dark: #c57049;
     --link: #db7b4f;
+    --grey-text: rgb(105, 105, 105);
+    --grey-text-darker: rgb(71, 71, 71);
   }
 
 body {
@@ -57,11 +60,13 @@ blockquote p{
 }
 
 /* Article */
+.container a,
 .article_content a {
     color: var(--link);
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: none;
 }
+.container a:hover,
 .article_content a:hover {
     color: var(--link-transitiion-dark);
     transition: 400ms;
