@@ -34,7 +34,7 @@
         </div>
 
         {{ if .Site.DisqusShortname }}
-            {{ template "_internal/disqus.html" . }}
+            {{- partial "disqus.html" . -}}
         {{ end }}
     </article>
     <aside class="toc toc-right js-toc relative z-1 transition--300 absolute pa4 pt5 is-position-fixed"></aside>

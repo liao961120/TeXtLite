@@ -4,6 +4,8 @@ date: 2021-02-05
 # aliases:
 #     - /2021/02/05/this-is-a-post
 tags: ["cool", "hugo", "pandoc"]
+disqusURL: https://yongfu.name/2021/06/03/my-r-course.html
+# disqusID: "identifier"
 ---
 
 ## 用意老會西公只義
