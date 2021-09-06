@@ -201,8 +201,12 @@
         div.project {
             margin-bottom: 2em;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+        }
+        div.project h3 {
+            line-height: 1.1;
         }
         div.project h3,
         div.project p.project-about {
@@ -223,7 +227,6 @@
             text-decoration: none;
         }
         div.project > * {
-            /* display: inline-block; */
             width: 48%;
             height: auto;
             margin: 0;
@@ -305,13 +308,19 @@
         section .container .row {
             padding: 0 3.5%;    
         }
-            section .container .row .left {
+        section .container .row .left {
             width: 100%;
-            min-width: 300px;
+            /* min-width: 300px; */
         }
         section .container .row .right {
             width: 100%;
-            min-width: 300px;
+            /* min-width: 300px; */
+        }
+        div.project > * {
+            width: 100%;
+        }
+        div.project > img {
+            margin-bottom: .5em;
         }
         
         }
