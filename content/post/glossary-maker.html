@@ -12,7 +12,7 @@ tags:
 title: Create a Glossary in R Markdown
 ---
 
-<p>I was thinking about creating a glossary in <a href="https://bookdown.org/yihui/bookdown/">bookdown</a> and found out that there was already an <a href="https://github.com/rstudio/bookdown/issues/199">issue</a> about it. I like Yihui’s <a href="https://github.com/rstudio/bookdown/issues/199#issuecomment-246888361">recommendation</a>: use Pandoc’s <a href="http://pandoc.org/MANUAL.html#definition-lists">definition lists</a>.<!--more--> This was exactly what I had been doing, but I quickly found out that there was a major drawback – the definition lists <strong>won’t order alphabetically unless written in that way</strong>.</p>
+<p>I was thinking about creating a glossary in <a href="https://bookdown.org/yihui/bookdown/">bookdown</a> and found out that there was already an <a href="https://github.com/rstudio/bookdown/issues/199">issue</a> about it. I like Yihui’s <a href="https://github.com/rstudio/bookdown/issues/199#issuecomment-246888361">recommendation</a>: use Pandoc’s <a href="http://pandoc.org/MANUAL.html#definition-lists">definition lists</a>. This was exactly what I had been doing, but I quickly found out that there was a major drawback – the definition lists <strong>won’t order alphabetically unless written in that way</strong>.</p>
 <p>So I wrote an R function to reorder the definition lists written in R Markdown. Note that this functions <strong>only works for R Markdown files containing defintion lists exclusively</strong>. If the R Markdown files aren’t whole-definition-lists, the function will fail.</p>
 <div id="usage" class="section level2">
 <h2>Usage</h2>
