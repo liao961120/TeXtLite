@@ -1,6 +1,4 @@
 ---
-aliases:
-- /2018/04/20/gsheet_survey.html
 date: '2018-04-20'
 description: 透過結合靜態網頁、DataCamp light、以及 google 試算表，使填寫結果即時回饋成為可能
 mermaid: false

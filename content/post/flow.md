@@ -1,6 +1,4 @@
 ---
-aliases:
-- /2020/06/27/flow.html
 date: '2020-06-27'
 description: '心流 (Flow: The Psychology of Optimal Experience) 的閱讀心得；自我反思'
 subtitle: ''
@@ -8,8 +6,7 @@ tags:
 - Experience
 - Psychology
 - 中文
-title: 《心流》讀書心得
-subtitle: "功利社會下的自我反思"
+title: 《心流》讀書心得：功利社會下的自我反思
 ---
 
 
@@ -80,3 +77,12 @@ subtitle: "功利社會下的自我反思"
 [^lang-learning]: 因為我在懂事之前 (意即在將社會價值完全內化之前) 就學英文了，所以不曾找過理由。魯凱語則是另一個不為任何功利目的而學習的語言。這學期在語言田野調查的課程中，一邊轉寫魯凱語一邊學習。轉寫族語老師說出來的語言真的是一個很棒的心流體驗。在面對一個完全陌生的語言時，需全神貫注才能抓到老師吐出的每個音，還必須時時確認老師講得族語是否真的是我們所要的內容。過程中，更常常因為發現魯凱語表達某些概念的特殊方式而感到驚喜不已。
 [^prog-skill]: 我的程式能力相當雜亂，十分不符就業市場。一開始學 R，接著接觸 Python；學 Python 時又變心開始碰 JavaScript；現在則寫了一些 Vue 的 App。引導我依這個方向前進的，不是潮流或就業能力需求，而是我**當下的能力**足夠學會什麼，以及這些程式語言足以做出什麼[有趣的東西](/#projects)。
 [^capitalism]: 例如，利用大眾對於人際關係、娛樂、美食與性的欲望而賺大錢的公司。
+
+
+<style>
+blockquote > p:last-child {
+    text-align: right;
+    margin-top: 0;
+    padding-top: 0;
+}
+</style>

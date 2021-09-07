@@ -1,14 +1,11 @@
 ---
-aliases:
-- /2021/07/18/act-values.html
 date: '2021-07-18'
 description: 有心人事 〈核心價值 (value) ：迷失方向時的指南針〉 文章讀後心得分享
 tags:
 - Experience
 - Psychology
 - 中文
-title: 文章分享
-subtitle: "核心價值 (value) ：迷失方向時的指南針"
+title: 文章分享：〈核心價值 (value) ：迷失方向時的指南針〉
 ---
 
 
