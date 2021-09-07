@@ -1,5 +1,6 @@
 ---
 title: This is a post
+subtitle: This is subtitle
 date: 2021-02-05
 # aliases:
 #     - /2021/02/05/this-is-a-post

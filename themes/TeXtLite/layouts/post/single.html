@@ -3,7 +3,15 @@
 <div class="main">
     <article class="post">
         <div class="article_header">
-            <h1>{{ .Title }}</h1>
+            <div class="titles">
+                <h1>{{ .Title }}</h1>
+                {{ if .Params.subtitle }}
+                    {{ if not ( eq .Params.subtitle "") }}
+                    <p class="subtitle">{{ .Params.subtitle }}</p>
+                    {{ end }}
+                {{ end }}
+            </div>
+            
 
             <!-- Taxonomies: https://gohugo.io/templates/taxonomy-templates/#example-list-tags-in-a-single-page-template -->
             <div class="meta">
