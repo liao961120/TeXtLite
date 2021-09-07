@@ -28,7 +28,7 @@
                         {{end}}
                             <li data-date='{{$element.Params.date.Format "2006-01-02"}}'>
                                 <span class="published">{{ dateFormat "Jan 02" $element.Params.date }}</span>
-                                <a href="{{.RelPermalink}}" aria-label="{{.Content | truncate 50}}">{{ .Title }}</a>
+                                <a href="{{.RelPermalink}}" aria-label="{{.Content | truncate 250}}">{{ .Title }}</a>
                             </li>
                     {{ end }}
                 {{end}}
