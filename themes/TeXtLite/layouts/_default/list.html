@@ -27,8 +27,8 @@
                             {{ $curr.Set "year" ($element.Params.date.Format "2006") }}
                         {{end}}
                             <li data-date='{{$element.Params.date.Format "2006-01-02"}}'>
-                                <span class="published">{{ dateFormat "Jan 2" $element.Params.date }}</span>
-                                <a href="{{.RelPermalink}}" title="{{.Content | truncate 50}}">{{ .Title }}</a>
+                                <span class="published">{{ dateFormat "Jan 02" $element.Params.date }}</span>
+                                <a href="{{.RelPermalink}}" aria-label="{{.Content | truncate 50}}">{{ .Title }}</a>
                             </li>
                     {{ end }}
                 {{end}}
@@ -49,8 +49,13 @@
                         {{ $curr.Set "year" ($element.Params.date.Format "2006") }}
                     {{end}}
                         <li data-date='{{$element.Params.date.Format "2006-01-02"}}'>
-                            <span class="published">{{ dateFormat "Jan 2" $element.Params.date }}</span>
-                            <a href="{{.RelPermalink}}" title="{{.Content | truncate 35}}">{{ .Title }}</a>
+                            <span class="published">{{ dateFormat "Jan 02" $element.Params.date }}</span>
+                            <a class="post-link" href="{{.RelPermalink}}" aria-label="{{.Content | truncate 250}}">
+                                <span>{{ .Title }}</span>
+                                {{ if $element.Params.subtitle }}
+                                <span class="subtitle">{{ $element.Params.subtitle }}</span>
+                                {{ end }}
+                            </a>
                         </li>
                 {{ end }}
             {{end}}
