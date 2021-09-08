@@ -9,28 +9,28 @@
                 <div class="row">
                     <div class="left personal-info">
                         <div class="imgCircle">
-                            <img src="{{ $.Site.Params.landing.avatar }}" alt="IMAGE HERE" class="avatar">
+                            <img src="{{ .Params.avatar }}" alt="IMAGE HERE" class="avatar">
                         </div>
-                        <p class="name">{{ $.Site.Params.landing.name }}</p>
-                        <p class="position">{{ $.Site.Params.landing.position }}</p>
-                        <p class="institute">{{ $.Site.Params.landing.institute }}</p>
+                        <p class="name">{{ .Params.name }}</p>
+                        <p class="position">{{ .Params.position }}</p>
+                        <p class="institute">{{ .Params.institute }}</p>
                         {{- partial "social.html" . -}}
                     </div>
                     <div class="right bio">
-                        {{ $.Site.Params.landing.biography.about | markdownify }}
+                        {{ .Content }}
                         <div class="row left-align">
                             <div class="left">
-                                <h3>{{ $.Site.Params.landing.biography.interests.title }}</h3>
+                                <h3>{{ .Params.interests.title }}</h3>
                                 <ul>
-                                {{ range $.Site.Params.landing.biography.interests.items }}
+                                {{ range .Params.interests.items }}
                                     <li>{{ . }}</li>
                                 {{ end }}
                                 </ul>
                             </div>
                             <div class="right">
-                                <h3>{{ $.Site.Params.landing.biography.education.title }}</h3>
+                                <h3>{{ .Params.education.title }}</h3>
                                 <ul class="edu-list">
-                                    {{ range $.Site.Params.landing.biography.education.items }}
+                                    {{ range .Params.education.items }}
                                     <li>
                                         <span class="icon">
                                             {{ readFile "/themes/TeXtLite/static/gadget/graduation-cap.svg" | safeHTML }}
@@ -54,11 +54,11 @@
             <div class="container">
                 <div class="row">
                     <div class="left">
-                        <h2>{{ $.Site.Params.landing.projects.title }}</h2>
+                        <h2>{{ .Params.projects.title }}</h2>
                     </div>
                     <div class="right">
                         <div id="proj-tags"><span data-tag="" class="clicked">All</span></div>
-                    {{ range $.Site.Params.landing.projects.items }}
+                    {{ range .Params.projects.items }}
                         <div class="project" data-tags='{{ delimit .tags "," }}'>
                             <img src="{{ .img }}" alt="{{ .name }}">
                             <div>
@@ -72,7 +72,7 @@
             </div>
         </section>
 
-        {{ range $.Site.Params.landing.sections }}
+        {{ range .Params.sections }}
         <section>
             <div class="container">
                 <div class="row">
