@@ -10,6 +10,8 @@ disqusURL: https://yongfu.name/2021/06/03/my-r-course.html
 mathjax: true
 ---
 
+$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
+
 $$ E = MC^2 $$
 
 ## 用意老會西公只義
