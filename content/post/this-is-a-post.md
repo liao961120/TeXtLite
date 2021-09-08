@@ -7,7 +7,10 @@ date: 2021-02-05
 tags: ["cool", "hugo", "pandoc"]
 disqusURL: https://yongfu.name/2021/06/03/my-r-course.html
 # disqusID: "identifier"
+mathjax: true
 ---
+
+$$ E = MC^2 $$
 
 ## 用意老會西公只義
 
