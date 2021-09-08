@@ -6,7 +6,7 @@
     --header-background-darker: #4B2C20;
     --link-transitiion-light: #df926e;
     --link-transitiion-dark: #c57049;
-    --link: #db7b4f;
+    --link: #d48f41;
     --grey-text: rgb(105, 105, 105);
     --grey-text-darker: rgb(71, 71, 71);
 }
@@ -55,8 +55,8 @@ body {
     margin: 0 0 .8em 0;
 }
 
-.article_header .titles h1 {
-    font-size: 2.3em;
+.article_header h1 {
+    font-size: 2.2em;
     margin-bottom: 0;
 }
 
