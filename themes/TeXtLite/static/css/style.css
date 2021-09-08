@@ -11,6 +11,10 @@
     --grey-text-darker: rgb(71, 71, 71);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     display: flex;
