@@ -141,12 +141,17 @@ blockquote>p:first-child {
     display: inline-block;
     font-family: monego, Monaco, Consolas, "Lucida Console", 'STKaiti', 'KaiTi', 'SimKai', monospace;
     font-size: 0.75em;
-    margin-right: 0.5em;
+    margin-right: 1em;
     color: rgb(104, 104, 104);
+}
+.article_list section h2 {
+    font-weight: 600;
+    font-size: 1.35em;
+    margin-bottom: 0;
+    margin-top: 1.3em;
 }
 
 /* Post preview */
-
 a[aria-label]:hover:after {
     content: attr(aria-label);
     padding: 4px 8px;
@@ -154,7 +159,7 @@ a[aria-label]:hover:after {
     z-index: 20;
     background: rgba(255, 255, 255, 0.952);
     position: absolute;
-    width: 30rem;
+    width: 23rem;
     color: rgb(51, 51, 51);
     font-weight: normal;
     font-style: italic;
@@ -170,7 +175,6 @@ a[aria-label]:hover:after {
 
 .article_list .subtitle {
     font-style: italic;
-    /* color: grey; */
     font-size: 0.8em;
     border-left: 1px solid rgb(100, 100, 100);
     padding-left: 5px;
@@ -178,7 +182,6 @@ a[aria-label]:hover:after {
 }
 
 /* Posts */
-
 .post .meta {
     display: flex;
     justify-content: space-between;
@@ -292,19 +295,20 @@ body > .header>.site_nav>span a:hover {
 
 /* Special DOM elements */
 table {
+    display: block;
     border-collapse: collapse;
-    width: 85%;
-    margin: 1em auto;
-    overflow: scroll;
+    width: 100%;
+    /* margin: 1em auto; */
+    overflow: auto;
 }
 table td, table th {
-    border: 1px solid rgba(255, 255, 255, 0.363);
+    border: 2px solid rgba(170, 170, 170, 0.274);
     padding: 4px;
     text-align: center;
 }
-table tr:nth-child(odd) {
+/* table tr:nth-child(odd) {
     background-color: var(--landing-section-skin);
-}
+} */
 
 table th {
     padding-top: 12px;
