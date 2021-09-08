@@ -96,16 +96,7 @@ blockquote p {
     padding: 0;
 }
 
-blockquote>p:last-child {
-    text-align: right;
-}
-
-blockquote>p:first-child {
-    text-align: left;
-}
-
 /* Article */
-
 .container a, .article_content a {
     color: var(--link);
     font-weight: 600;
