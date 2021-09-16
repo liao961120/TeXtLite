@@ -1,5 +1,5 @@
 ---
-avatar: https://img.yongfu.name/img/me.jpg
+avatar: https://img.yongfu.name/img/yongfu-crop.jpg
 name: "Yongfu Liao"
 position: "M.A. Student"
 institute: "National Taiwan University"
