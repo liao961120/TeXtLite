@@ -147,26 +147,38 @@ blockquote p {
 }
 
 /* Post preview */
-a[aria-label]:hover:after {
-    content: attr(aria-label);
-    padding: 4px 8px;
-    margin-left: .5em;
-    z-index: 20;
-    background: rgba(255, 255, 255, 0.952);
-    position: absolute;
-    width: 23rem;
-    color: rgb(51, 51, 51);
-    font-weight: normal;
-    font-style: italic;
-    font-size: 0.88em;
-    text-align: justify;
-    border-radius: 6px;
-    border: 2px solid rgb(172, 172, 172);
-    line-height: 1.37;
-    max-height: 6.37em;
-    overflow: hidden;
-    /* Hide scrollbars */
+@media only screen and (min-width: 700px) {
+    a[aria-label]:after{
+        content: attr(aria-label);
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        display: block;
+        width: 55%;
+        margin: 0;
+        text-align: justify;
+        z-index: 20;
+        background: var(--header-background-darker);
+        color: white;
+        font-weight: normal;
+        /* font-style: italic; */
+        font-size: 0.9em;
+        line-height: 1.4;
+        /* Hide scrollbars */
+        /* Transitions */
+        opacity: 0;
+        max-height: 0;
+        padding: 0;
+        transition: opacity 0.85s;
+        
+    }
+    a[aria-label]:hover:after {
+        opacity: 1;
+        max-height: 40vh;
+        padding: .5rem 2% .5rem 43%;
+    }
 }
+
 
 .article_list .subtitle {
     font-style: italic;
