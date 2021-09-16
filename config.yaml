@@ -1,8 +1,8 @@
 baseURL: "https://textlite.netlify.app/"
 languageCode: "en-us"
-title: "Yongfu's Blog"
+title: "Oliver's Blog"
 theme: "TeXtLite"
-disqusShortname: y-f-liao-s-page
+disqusShortname: "disqus-shortname-here"
 footnoteReturnLinkContents: "↩"
 
 permalinks:

@@ -1,6 +1,6 @@
 ---
-avatar: https://img.yongfu.name/img/yongfu-crop.jpg
-name: "Yongfu Liao"
+avatar: https://img.yongfu.name/img/oliver-crop.jpg
+name: "Oliver the Sloth"
 position: "M.A. Student"
 institute: "National Taiwan University"
 interests:
@@ -24,8 +24,13 @@ projects:
         - name: "Draggable Interval Training Timer"
           tags: ['JavaScript']
           about: "A timer that supports drag-and-droping to create custom interval workouts. Written in vanilla JavaScript, HTML & CSS."
-          url: https://github.com/liao961120/draggableTimer
-          img: /project/draggableTimer.png 
+          url: https://timer.yongfu.name/
+          img: https://github.com/liao961120/draggableTimer/raw/main/demo/demo.gif
+        - name: "A Python Library for Concordance Search with CQL"
+          tags: ['Python',  'Linguistics', 'Vue']
+          about: "Searching in-memory corpus with Corpus Query Language (CQL)."
+          url: https://github.com/liao961120/concordancer
+          img: https://img.yongfu.name/concordancer/concordancer.png
 sections:
     - title: "Teaching"
       about: |
