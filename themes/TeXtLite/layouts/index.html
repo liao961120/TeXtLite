@@ -54,7 +54,7 @@
             <div class="container">
                 <div class="row">
                     <div class="left">
-                        <h2>{{ .Params.projects.title }}</h2>
+                        <h2 id="{{ .Params.projects.title | urlize }}">{{ .Params.projects.title }}</h2>
                     </div>
                     <div class="right">
                         <div id="proj-tags"><span data-tag="" class="clicked">All</span></div>
@@ -77,7 +77,7 @@
             <div class="container">
                 <div class="row">
                     <div class="left">
-                        <h2>{{ .title }}</h2>
+                        <h2 id="{{ .title | urlize }}">{{ .title }}</h2>
                     </div>
                     <div class="right">
                         {{ .about | markdownify }}
