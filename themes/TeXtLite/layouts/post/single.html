@@ -44,6 +44,21 @@
         {{ if .Site.DisqusShortname }}
             {{- partial "disqus.html" . -}}
         {{ end }}
+
+        <div class="next-prev">
+            {{ with .PrevInSection }}
+                <div>
+                    <span>PREV</span>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </div>
+            {{ end }}
+            {{ with .NextInSection }}
+            <div>
+                <span>NEXT</span>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+            {{ end }}
+        </div>
     </article>
     <aside class="toc toc-right js-toc relative z-1 transition--300 absolute pa4 pt5 is-position-fixed"></aside>
     <!-- <aside>{{ .TableOfContents }}</aside> -->
@@ -72,6 +87,34 @@
         position: fixed;
         top: 15% !important;
         right: 2%;
+    }
+    .next-prev {
+        margin-top: 2.5em;
+        border-top: 2px solid rgba(173, 173, 173, 0.548);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .next-prev > div {
+        min-width: 150px;
+        width: 43%;
+    }
+    .next-prev > div > span {
+        display: block;
+        width: 100%;
+        color: grey;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        padding-bottom: 0.3rem;
+        margin-top: .4rem;
+    }
+    .next-prev > div:nth-child(2) {
+        text-align: right;
+    }
+    .next-prev > div > a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
     }
 </style>
 {{ end }}
