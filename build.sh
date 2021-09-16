@@ -1,4 +1,2 @@
-hugo -D
-minify -r -o out/ public
-rm -r public
-mv out public
+# Use hugo 0.52 extended version
+hugo --minify

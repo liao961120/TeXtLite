@@ -1,1 +1,7 @@
 public
+.vscode
+__pycache__
+/hugo
+/minify
+/hugo.zip
+/minify.zip
