@@ -16,11 +16,6 @@ education:
 projects:
     title: "Projects"
     items:
-        - name: "NTU Thesis Pandoc Template"
-          tags: ['Pandoc', 'Linguistics']
-          about: "Master and PhD thesis template for National Taiwan University, based on Pandoc."
-          url: https://github.com/liao961120/thesis
-          img: /project/ntuthesis.png
         - name: "Draggable Interval Training Timer"
           tags: ['JavaScript']
           about: "A timer that supports drag-and-droping to create custom interval workouts. Written in vanilla JavaScript, HTML & CSS."
@@ -31,6 +26,11 @@ projects:
           about: "Searching in-memory corpus with Corpus Query Language (CQL)."
           url: https://github.com/liao961120/concordancer
           img: https://img.yongfu.name/concordancer/concordancer.png
+        - name: "NTU Thesis Pandoc Template"
+          tags: ['Pandoc', 'Linguistics']
+          about: "Master and PhD thesis template for National Taiwan University, based on Pandoc."
+          url: https://github.com/liao961120/thesis
+          img: /project/ntuthesis.png
 sections:
     - title: "Teaching"
       about: |
