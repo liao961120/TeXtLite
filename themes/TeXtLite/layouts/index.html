@@ -64,6 +64,11 @@
                             <div>
                                 <h3><a href="{{ .url }}" target="_blank">{{ .name }}</a></h3>
                                 <p class="project-about">{{ .about }}</p>
+                                <div class="project-tags">
+                                    {{ range .tags }}
+                                        <span>{{ . }}</span>
+                                    {{ end }}
+                                </div>
                             </div>
                         </div>
                     {{ end }}
@@ -87,19 +92,9 @@
         </section>
         {{ end }}
 
-        <!-- <section class="featured">
-            <div class="container">
-                <h2>Featured</h2>
-                <div class="row">
-                    <span class="icon">ICON</span>
-                    <span class="icon">ICON</span>
-                    <span class="icon">ICON</span>
-                </div>
-            </div>
-        </section> -->
-
-        
         {{- partial "footer.html" . -}}
+
+        {{- partial "scrollBtn.html" -}}
     </body>
 
     <script>
@@ -109,6 +104,7 @@
         document.querySelectorAll(".project").forEach(e => {
             tags = tags.concat(e.getAttribute('data-tags').split(','));
         })
+        tags = [...new Set(tags)].sort((a, b) => b.length - a.length)
         function showTag() {
             document.querySelectorAll('#proj-tags>span').forEach(e => e.className = "");
             this.className = 'clicked';
@@ -184,12 +180,14 @@
         #proj-tags {
             margin-bottom: 1em;
         }
-        #proj-tags > span {
+        #proj-tags > span,
+        .project-tags > span {
+            display: inline-block;
             color: white;
             background-color: var(--header-background);
             padding: 0.1em 0.3em;
+            margin: 0 0.25em 0.18em 0;
             border-radius: 0.2em;
-            margin-right: 0.25em;
         }
         #proj-tags > span:hover {
             cursor: pointer;
@@ -197,6 +195,10 @@
         }
         #proj-tags > span.clicked {
             background-color: var(--header-background-darker); 
+        }
+        .project-tags {
+            margin-top: 0.5em;
+            font-size: 0.8em;
         }
         div.project {
             margin-bottom: 2em;
