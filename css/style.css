@@ -9,6 +9,7 @@
     --link: #d48f41;
     --grey-text: rgb(105, 105, 105);
     --grey-text-darker: rgb(71, 71, 71);
+    --inline-code-skin: #E4CEC0;
 }
 
 html {
@@ -24,6 +25,14 @@ body {
     margin: 0;
     padding: 0;
     background: var(--skin);
+}
+
+/* Inline code style */
+p code, li code {
+    font-size: 0.85em;
+    background-color: var(--inline-code-skin);
+    padding: 0.15em 0.28em;
+    border-radius: 0.25em;
 }
 
 /* Main */
@@ -83,6 +92,9 @@ body {
     width: 70%;
     display: block;
     margin: 0 auto;
+}
+.article_content img[width] {
+    width: auto;
 }
 
 blockquote {
