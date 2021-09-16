@@ -35,7 +35,7 @@
             document.querySelectorAll('code, pre').forEach(elem => {
                 if (elem.className.startsWith('language')) 
                     elem.className += " line-numbers";
-                if (['r', 'yaml', 'latex', 'markdown'].includes(elem.className)) {
+                if (['r', 'yaml', 'latex', 'markdown', 'bash', 'sh', 'json'].includes(elem.className)) {
                     elem.className = "language-" + elem.className + " line-numbers";
                 }
             })
