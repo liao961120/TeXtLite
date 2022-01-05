@@ -90,6 +90,7 @@
                 if (t == 'all') e.style.display = "block";
             })
         } else {
+            tag = decodeURI(tag);
             // Highlight tag button
             document.querySelectorAll('.tags > a').forEach(e => {
                 if (e.getAttribute('data-tag') == tag) e.className += " highlight";
