@@ -23,7 +23,7 @@
                                 <h3>{{ .Params.interests.title }}</h3>
                                 <ul>
                                 {{ range .Params.interests.items }}
-                                    <li>{{ . }}</li>
+                                    <li>{{ . | markdownify }}</li>
                                 {{ end }}
                                 </ul>
                             </div>
