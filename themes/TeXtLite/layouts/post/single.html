@@ -41,9 +41,7 @@
             {{ .Content }}
         </div>
 
-        <br><br>
-        <hr>
-        <br>
+        <br><br><br>
         {{ if or .Params.utterances (in .Site.Params.comments.default "utterances") }}
             {{- partial "utterances.html" . -}}
         {{ end }}
