@@ -1,13 +1,18 @@
 ---
 title: TeXtLite Theme with Quarto
 subtitle: "Writing Hugo Blog Post in Quarto"
-description: ""
+description: "Quarto, Hugo, R, markdeep"
 date: '2023-02-25'
+aliases:
+    - /demo
 katex: true
+utterances: true
+disqus: false
 tags:
 - r
 - quarto
 - Hugo
+# Quarto settings below
 format: 
    gfm:
       output-file: "index"
@@ -16,8 +21,6 @@ format:
       df-print: tibble
 editor:
    render-on-save: false
-utterances: true
-disqus: true
 ---
 
 <figure>
@@ -29,17 +32,27 @@ caption</em>. Markdown formatting is available.</figcaption>
 
 ## TeXtLite Features
 
-- Math support through KaTeX: set `katex: true` in yaml
+- Math support through KaTeX
 - Post tags & subtitle
 - Hover footnotes[^1] through
   [tippy.js](https://atomiks.github.io/tippyjs/)
 - Auto Floating TOC through [Tocbot](https://tscanlin.github.io/tocbot/)
 - Hugo native features
+  - Hugo version: `v0.93.0`
   - Syntax highlighting
-  - Mermaid / GoAt diagrams
+  - [Mermaid / GoAt diagrams](https://gohugo.io/content-management/diagrams/)
 - Comment systems
-  - disqus
-  - utterance
+  - [utterances](https://utteranc.es)
+  - [disqus](https://disqus.com)
+
+### Math
+
+$$
+\begin{align}
+\tag{1.1} Y_i &\sim Normal(\mu_i, \sigma) \\\\
+\tag{1.2} \mu_i &= \alpha + \beta x_i
+\end{align}
+$$
 
 ### Diagram with GoAt
 
@@ -53,6 +66,10 @@ caption</em>. Markdown formatting is available.</figcaption>
 | A |     | D |    |    | A |     | D |   
  '-'       '-'           '-'       '-'    
 ```
+
+- [Origin](https://casual-effects.com/markdeep/)
+- [Go re-implementation](https://github.com/blampe/goat)
+- [Live editor](https://yongfu.name/dag/)
 
 ## Quarto Integration
 
