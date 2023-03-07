@@ -8,6 +8,13 @@ footnoteReturnLinkContents: "↩"
 permalinks:
   post: /:year/:month/:day/:filename/
 
+outputFormats:
+  RSS:
+    baseName: feed
+    mediaType: application/rss
+
+summaryLength: 80
+
 menu:
   main:
     - name: "Home"
@@ -20,7 +27,7 @@ menu:
       url: "/about/"
       weight: 4
     - name: "Subscribe"
-      url: "/index.xml"
+      url: "/feed.xml"
 
 params:
   description: "About Learning"
@@ -36,7 +43,11 @@ params:
     github: "/themes/TeXtLite/static/social/github.svg"
     facebook: "/themes/TeXtLite/static/social/facebook.svg"
   comments:
+    utterances: "liao961120/comments"
     disqus: "y-f-liao-s-page"
+    # Comment systems to include by default
+    default:
+      - utterances
 
 markup:
   highlight:
@@ -46,8 +57,27 @@ markup:
     hl_Lines: ""
     lineAnchors: ""
     lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
+    lineNos: true
+    lineNumbersInTable: false
     noClasses: true
     style: monokai
     tabWidth: 4
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: false
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false

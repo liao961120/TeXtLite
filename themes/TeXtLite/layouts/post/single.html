@@ -41,7 +41,14 @@
             {{ .Content }}
         </div>
 
-        {{ if .Site.DisqusShortname }}
+        <br><br>
+        <hr>
+        <br>
+        {{ if or .Params.utterances (in .Site.Params.comments.default "utterances") }}
+            {{- partial "utterances.html" . -}}
+        {{ end }}
+
+        {{ if or .Params.disqus (in .Site.Params.comments.default "disqus")  }}
             {{- partial "disqus.html" . -}}
         {{ end }}
 
@@ -74,6 +81,7 @@
         contentSelector: '.article_content',
         // Which headings to grab inside of the contentSelector element.
         headingSelector: 'h2, h3, h4',
+        scrollSmooth: false,
         // For headings inside relative or absolute positioned containers within content.
         hasInnerContainers: true,
         collapseDepth: 3,

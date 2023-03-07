@@ -1,7 +1,9 @@
 public
 .vscode
 __pycache__
-/hugo
-/minify
-/hugo.zip
-/minify.zip
+content/Posts.docx
+content/Posts.md
+_site
+.DS_Store
+.hugo_build.lock
+markdown-themes

@@ -6,14 +6,14 @@
             <h1>Tags</h1>
 
             <div class="tags">
-                <a onclick="switchTag('all')" data-tag="all">All<sup style="font-weight:normal"> {{ len .Pages }}</sup></a>
-                {{ range $tag, $pages := .Site.Taxonomies.tags }}
-                    <a onclick="switchTag('{{$tag}}')" data-tag="{{ $tag }}">{{ $tag }}<sup style="font-weight:normal"> {{ len $pages }}</sup></a>
+                <a onclick="switchTag('all')" data-tag="all">All<sup style="font-weight:normal"> 
+                    {{ len .Pages }}</sup></a>
+                {{ range $.Site.Taxonomies.tags.ByCount }}
+                    <a onclick="switchTag('{{ .Name }}')" data-tag="{{ .Name }}">{{ .Name }}<sup style="font-weight:normal"> {{ .Count }}</sup></a>
                 {{ end }}
             </div>
         </div>
         
-        <!-- <div id="data" data-pages="{{ jsonify .Pages }}">DATA here</div> -->
 
         {{ range $tag, $pages := .Site.Taxonomies.tags }}
             {{ $curr := newScratch }}
