@@ -32,15 +32,16 @@ caption</em>. Markdown formatting is available.</figcaption>
 
 ## TeXtLite Features
 
-- Math support through KaTeX
 - Post tags & subtitle
-- Hover footnotes[^1] through
-  [tippy.js](https://atomiks.github.io/tippyjs/)
-- Auto Floating TOC through [Tocbot](https://tscanlin.github.io/tocbot/)
+- Sidenotes[^1] & Floating TOC (on screens wider than 1280px) through
+  [sidenotes.js](https://yihui.org/en/2023/10/html-article/)
+- Math support through KaTeX (clickable buttons to copy TeX commands)
+- Client-side searching with [Fuse.js](https://www.fusejs.io)
 - Hugo native features
-  - Hugo version: `v0.93.0`
+  - Hugo version: `v0.93.0` extended (suggest: `v0.110.0` extended)
   - Syntax highlighting
-  - [Mermaid / GoAt diagrams](https://gohugo.io/content-management/diagrams/)
+  - [Mermaid / GoAt
+    diagrams](https://gohugo.io/content-management/diagrams/)
 - Comment systems
   - [utterances](https://utteranc.es)
   - [disqus](https://disqus.com)
@@ -79,7 +80,7 @@ $$
 head(iris)
 ```
 
-    # A tibble: 6 × 5
+    # A tibble: 6 x 5
       Sepal.Length Sepal.Width Petal.Length Petal.Width Species
              <dbl>       <dbl>        <dbl>       <dbl> <fct>  
     1          5.1         3.5          1.4         0.2 setosa 
@@ -103,4 +104,4 @@ with(iris, {
 <img src="index_files/figure-commonmark/unnamed-chunk-2-1.svg"
 style="width:100.0%" data-fig-align="center" />
 
-[^1]: A hover footnote.
+[^1]: Hover on the number in the text to see a hover footnote.
