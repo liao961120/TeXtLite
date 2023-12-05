@@ -18,15 +18,18 @@
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 renderMathInElement(document.body, {
-                // customised options
-                // • auto-render specific keys, e.g.:
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false},
-                ],
-                // • rendering keys, e.g.:
-                throwOnError : false
+                    // customised options
+                    // • auto-render specific keys, e.g.:
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                    ],
+                    // • rendering keys, e.g.:
+                    throwOnError : false,
+                });
+                document.querySelectorAll(".katex-display").forEach((e, i) => {
+                    e.id = `math-eq${i+1}`;
                 });
             });
         </script>
@@ -41,28 +44,5 @@
             mermaid.initialize({ startOnLoad: true });
         </script>
         {{ end }}
-
-
-        <!-- Development -->
-        <!-- <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script> -->
-        <!-- Production -->
-        <script src="https://unpkg.com/@popperjs/core@2"></script>
-        <script src="https://unpkg.com/tippy.js@6"></script>
-        <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light-border.css"/>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                document.querySelectorAll('a[href^="#fn"]:not(.footnote-backref)').forEach(e => {
-                    const id = new URL(e.href).hash;
-                    console.log(id)
-                    tippy(e, {
-                        content: document.getElementById(id.substring(1)).innerHTML,
-                        allowHTML: true,
-                        theme: 'light-border'
-                    })
-                })
-            })
-        </script>
-        
     </body>
 </html>

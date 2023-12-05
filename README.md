@@ -6,13 +6,13 @@ Lightweight Port of Jekyll TeXt Theme to Hugo.
 
 ## Features
 
-- Math support through KaTeX
 - Post tags & subtitle
-- Hover footnotes[^1] through
-  [tippy.js](https://atomiks.github.io/tippyjs/)
-- Auto Floating TOC through [Tocbot](https://tscanlin.github.io/tocbot/)
+- Sidenotes & Floating TOC (on screens wider than 1280px) through
+  [sidenotes.js](https://yihui.org/en/2023/10/html-article/)
+- Math support through KaTeX (clickable buttons to copy TeX commands)
+- Client-side searching with [Fuse.js](https://www.fusejs.io)
 - Hugo native features
-  - Hugo version: `v0.93.0`
+  - Hugo version: `v0.93.0` extended (suggest: `v0.110.0` extended)
   - Syntax highlighting
   - [Mermaid / GoAt diagrams](https://gohugo.io/content-management/diagrams/)
 - Comment systems

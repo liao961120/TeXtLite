@@ -1,2 +1,2 @@
-# Use hugo 0.52 extended version
+# Use hugo 0.93.0 extended version
 hugo --minify

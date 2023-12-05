@@ -15,6 +15,9 @@ outputFormats:
 
 summaryLength: 80
 
+outputs:
+  home: ["html", "rss", "json"]
+
 menu:
   main:
     - name: "Home"
@@ -28,6 +31,10 @@ menu:
       weight: 4
     - name: "Subscribe"
       url: "/feed.xml"
+      weight: 5
+    - name: "<span style='font-size:1.1em;'>⌕</span>"  #"🔎"
+      url: "/search/"
+      weight: 6
 
 params:
   description: "About Learning"
